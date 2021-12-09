@@ -1,0 +1,142 @@
+{% extends 'account/base/base.html' %}
+
+{% load static %}
+
+{% block title %} About {% endblock %}
+
+
+{% block site_css %}
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block main %} 
+    {% include 'account/includes/browse.html' %}
+{% endblock %}
+
+
+{% block click %}
+        <a class="navbar-brand" href="{% url 'homepage_without_login' %}" method="POST">First Website</a>
+{% endblock %}
+
+{% block home %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'homepage_without_login' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            -->
+        </ul>
+
+{% endblock %}
+         
+
+{% block login %}
+
+          <ul class="navbar-nav">
+            <li class="nav-item mr-sm-2">
+                <a class="nav-link hello-msg" href="login">Login</a>
+            </li>
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="register">Register</a>
+            </li>
+            <!-- <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+            -->
+          </ul>
+
+{% endblock %}
+
+{% block content %}
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'account/image/liverpool.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+      <h2>Liverpol</h2>
+      <p>Liverpool Football Club is a professional football club in Liverpool, England, that competes in the Premier League, the top tier of English football. Domestically, the club has won nineteen League titles, seven FA Cups, a record eight League Cups and fifteen FA Community Shields. In international competitions, the club has won six European Cups, more than any other English club, three UEFA Cups, four UEFA Super Cups (also English records) and one FIFA Club World Cup.
+        Founded in 1892, the club joined the Football League the following year and has played at Anfield since its formation. Liverpool established itself as a major force in English and European football in the 1970s and 1980s, when Bill Shankly, Bob Paisley, Joe Fagan and Kenny Dalglish led the club to a combined eleven League titles and four European Cups. Liverpool won two further European Cups in 2005 and 2019 under the management of Rafael Benítez and Jürgen Klopp, respectively; the latter led Liverpool to a nineteenth League title in 2020, the club's first during the Premier League era.
+        </p>
+      <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Liverpool_F.C."  target="_blank" role="button">View details &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'account/image/tomboy.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+      <h2>Youth</h2>
+      <p>The United Nations defines youth as persons between the ages of 15 and 24 with all UN statistics based on this range, the UN states education as a source for these statistics. The UN also recognizes that this varies without prejudice to other age groups listed by member states such as 18–30. A useful distinction within the UN itself can be made between teenagers (i.e. those between the ages of 13 and 19) and young adults (those between the ages of 20 and 29). While seeking to impose some uniformity on statistical approaches, the UN itself is aware of contradictions between approaches in its own statutes. Hence under the 15–24 definition (introduced in 1981) children are defined as those under the age of 14 while under the 1979 Convention on the Rights of the Child, those under the age of 18 are regarded as children. The UN also states they are aware that several definitions exist for youth within UN entities such as Youth Habitat 15–32 and African Youth Charter 15–35.</p>
+      <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Youth" target="_blank" role="button">View details &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'account/image/waterfall.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+      <h2>Waterfall</h2>
+      <p>Waterfalls are commonly formed in the upper course of a river where lakes flow into valleys in steep mountains. Because of their landscape position, many waterfalls occur over bedrock fed by little contributing area, so they may be ephemeral and flow only during rainstorms or significant snowmelt. The further downstream, the more perennial a waterfall can be. Waterfalls can have a wide range of widths and depths.
+        Aerial view of Victoria Falls on the Zambezi River in southern Africa. The cloud formed by the mist is called cataractagenitus.
+       </p>
+      <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Waterfall" target="_blank" role="button">View details &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">First quote. <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Do what you can, with what you have, where you are.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src="{% static 'account/image/TIN_3263.jpg' %}" width="500" height="500" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Second quote. <span class="text-muted">See for yourself.</span></h2>
+      <p class="lead">Wise men speak because they have something to say; fools because they have to say something.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" src="{% static 'account/image/TIN_4019.jpg' %}" width="500" height="500" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">What you do speaks so loudly that I cannot hear what you say.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src="{% static 'account/image/TIN_4712.jpg' %}" width="500" height="500" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <img src="{% static 'account/icon/heart.gif' %}" alt="this slowpoke moves"  width="120"  /> -->
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- <link rel="First Website" href="https://getbootstrap.com/docs/4.0/examples/carousel/"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'account/style/core-first.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'account/style/padding-footer.css' %} rel="stylesheet" type="text/css">
+    <style>
+      .hello-msg{
+        font-size: 18px;
+        color: #fff;
+        margin-right: 20px;
+      }
+    </style>
+    {% block site_css %}
+    
+
+
+    {% endblock %}
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+        {% block click %}
+        <!-- <a class="navbar-brand" href="{% url 'homepage_without_login' %}" method="POST">First Website</a> -->
+        {% endblock %}
+        
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+          {% block home %}{% endblock %}
+          <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'homepage_without_login' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+           
+          </ul> -->
+
+
+
+
+          {% block login %}{% endblock %}
+          <!-- <ul class="navbar-nav">
+            <li class="nav-item mr-sm-2">
+                <a class="nav-link hello-msg" href="login">Hello, {{request.user}}</a>
+            </li>
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="register">Register</a>
+            </li>
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+           
+          </ul> -->
+          <!-- <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+        {% block main %}{% endblock %}
+      
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+
+
+
+        <!-- START THE FEATURETTES -->
+        {% block content %}{% endblock %}
+        
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="{% url 'homepage' %}">Back to homepage</a></p>
+        <p>&copy; 1991-2021 Long Vu &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{%  static 'account/scripts/base-first.js'  %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="{%  static "account/scripts/base-five.js"  %}"><\/script>')</script>
+    <script src="{%  static 'account/scripts/base-two.js'  %}"></script>
+    <script src="{%  static 'account/scripts/base-three.js'  %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{%  static 'account/scripts/base-four.js'  %}"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'account/base/base.html' %}
+
+{% load static %}
+
+{% block title %} About {% endblock %}
+
+
+{% block site_css %}
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+{% endblock %}
+
+{% block main %} 
+    {% include 'account/includes/browse.html' %}
+{% endblock %}
+
+
+{% block click %}
+        <a class="navbar-brand" href="{% url 'homepage' %}" method="POST">First Website</a>
+{% endblock %}
+
+{% block home %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+           
+        </ul>
+
+{% endblock %}
+
+
+
+{% block login %}
+
+          <ul class="navbar-nav">
+            <li class="nav-item mr-sm-2">
+                <a class="nav-link hello-msg" href="login">Hello, {{request.user}}</a>
+            </li>
+            <!-- <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="register">Register</a>
+            </li> -->
+            <li class="nav-item mr-sm-2">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+           
+          </ul>
+
+{% endblock %}
+
